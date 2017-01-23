@@ -9,7 +9,6 @@ describe('collatz()', function(){
 
   it('returns \'1\' no matter what ordinal natural number is passed to it.', function(){
     expect(collatz(59)).to.equal(1)
-    // expect(collatz(199)).to.equal(1)
     expect(collatz(30)).to.equal(1)
     expect(collatz(2)).to.equal(1)
   })
@@ -17,6 +16,7 @@ describe('collatz()', function(){
   it('returns error if a non number or non-positive whole number is passed to it.', function(){
     expect(collatz({a: false, b: _ => {}, c: [1,4]})).to.equal('Please use only ordinal natural numbers. (1,2,3...)')
     expect(collatz(5.67)).to.equal('Please use only ordinal natural numbers. (1,2,3...)')
+    expect(collatz(Infinity)).to.equal('Please use only ordinal natural numbers. (1,2,3...)')
   })
 
 })
