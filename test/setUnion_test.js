@@ -7,7 +7,7 @@ describe('setUnion()', function(){
     expect(setUnion).to.be.a('function')
   })
 
-  it('should combine two sets without duplicate elements', function() {
+  it('should combine two sets without duplicating elements', function() {
     const a = [2, 1, 3, 4]
     const b = [2, 4, 6, 8]
     const c = [7, 9, 10]
