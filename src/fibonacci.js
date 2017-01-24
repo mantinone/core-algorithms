@@ -14,19 +14,10 @@ export default function fibonacci( position ) {
   if (position ===2 ){
     return result
   }
+  
 
-  //To PRRR reviewer: The commented code feels more elegant, but the present
-  //code seems like it would be more efficient.
-  //Is this true?
-
-  //let result = []
-
-  for(let i = 2 /* let i =0*/ ; i < position ; i++ ){
-    // if(i<2){
-    //   result.push(i)
-    // } else {
+  for(let i = 2; i < position ; i++ ){
     result.push( result[i-2]+result[i-1])
-  //  }
   }
 
   return result
