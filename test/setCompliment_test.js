@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 import setCompliment from '../src/setCompliment'
 
-describe.only('setCompliment()', function(){
+describe('setCompliment()', function(){
 
   it('should be a function', function(){
     expect(setCompliment).to.be.a('function')
