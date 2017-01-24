@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 import setSymmetricDifference from '../src/setSymmetricDifference'
 
-describe.only('setSymmetricDifference()', function(){
+describe('setSymmetricDifference()', function(){
 
   it('should be a function', function(){
     expect(setSymmetricDifference).to.be.a('function')
@@ -13,7 +13,7 @@ describe.only('setSymmetricDifference()', function(){
     const c = [7, 9, 10]
     const d = ['goats', 'apples', 7, false]
     const e = ['goats', 7, 4, 'fish']
-    expect(setSymmetricDifference(a,c)).to.eql([ 1, 2, 3, 4, 7, 9, 10])
+    expect(setSymmetricDifference(a, c)).to.eql([ 1, 2, 3, 4, 7, 9, 10])
     expect(setSymmetricDifference(a, b)).to.eql([1, 3, 6, 8])
     expect(setSymmetricDifference(d, e)).to.eql([ 'apples', false, 4, 'fish'])
   })

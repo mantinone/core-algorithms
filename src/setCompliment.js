@@ -1,5 +1,5 @@
 export default function setCompliment( set1 = [], set2 = [] ){
-  if( set1 == null || set1 == null){
+  if( set1 == null || set2 == null){
     return 'Cannot union null values'
   }
   if( set1.constructor !== Array || set2.constructor !== Array){
