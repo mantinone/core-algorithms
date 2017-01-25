@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 import setIntersect from '../src/setIntersect'
 
-describe.only('setIntersect()', function(){
+describe('setIntersect()', function(){
 
   it('should be a function', function(){
     expect(setIntersect).to.be.a('function')
