@@ -1,7 +1,7 @@
 export default function makeChange({price, amountGiven}) {
   let difference = amountGiven - price
   if ( difference != difference ){
-    return "Please enter a number."
+    return 'Please enter a number.'
   }
   if ( difference < 0 ){
     return 'Not enough money given.'
