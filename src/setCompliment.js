@@ -1,4 +1,4 @@
-export default function setUnion( set1 = [], set2 = [] ){
+export default function setCompliment( set1 = [], set2 = [] ){
   if( set1 == null || set2 == null){
     return 'Cannot union null values'
   }
@@ -6,13 +6,13 @@ export default function setUnion( set1 = [], set2 = [] ){
     return 'Please use Arrays'
   }
 
-  let result = set1.slice(0)
+  let result = []
 
   for ( let i of set2 ){
     if( i.constructor === Array || typeof i === 'object' || typeof i === 'function'){
       return 'No nested arrays or objects'
     }
-    let testval = findDuplicate( i, result )
+    let testval = findDuplicate( i, set1 )
     if( typeof testval === 'string'){
       return testval
     }
