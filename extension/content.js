@@ -26,7 +26,7 @@
 })();
 
 function myCode() {
-  const avoidMe = [
+  /*const avoidMe = [
     'SCRIPT',
     'NOSCRIPT',
     'STYLE',
@@ -54,4 +54,61 @@ function myCode() {
   }
 
   //$('#innerpagecontentcommon')
+  */
+
+  let count = 0
+
+  const avoidMe = [
+      'SCRIPT',
+      'NOSCRIPT',
+      'STYLE',
+      'IFRAME'
+    ]
+
+  const vowels = [
+    'a', 'A',
+    'e', 'E',
+    'i', 'I',
+    'o', 'O',
+    'u', 'U'
+  ]
+
+  const recursiveSelect = (node, callback) => {
+    //count++
+    if(count < 200){
+      console.log(    count    )
+      if(!avoidMe.includes(node.tagName) && node.childNodes.length === 0) {
+        callback(node)
+      }
+      node.childNodes.forEach( nodeElement => {
+        recursiveSelect(nodeElement, callback)
+      })
+    }
+  }
+
+  const merger = ( node ) => {
+    let nd = $(node)[0]
+    console.log(nd.data)
+    if( nd.data ){
+      let split = nd.data.split("")
+      nd.data = mergeSort(split).join("")
+    }
+  }
+
+  const aaa = ( node ) => {
+    $(node)[0].data = 'AAAAAAAAAAAA'
+  }
+
+  // $(node)[0].data = '<img src=http://popsop.com/wp-content/uploads/get_some_nuts_snickers.jpg >'
+
+
+  const embarrassing = ( node ) => {
+    $(node)[0].data = 'Embarrassing!'
+  }
+
+  recursiveSelect(document.body, node => {
+    //$(node)[0].data.replace(/a/g, )
+    aaa(node)
+  })
+
 }
