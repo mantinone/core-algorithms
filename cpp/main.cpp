@@ -1,4 +1,5 @@
 #include <iostream>
+
 int* bubbleSort( int*, int  );
 
 int* bubbleSort( int* initialSet, int length )
@@ -37,5 +38,8 @@ int main()
     std::cout << result[i] << std::endl;
 
   }
+
+  system("read");
+  
   return 0;
 }

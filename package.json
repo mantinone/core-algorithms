@@ -18,7 +18,8 @@
   },
   "scripts": {
     "test": "mocha --compilers js:babel-register",
-    "lint": "eslint src/*"
+    "lint": "eslint src/*",
+    "cpp": "g++ ./cpp/main.cpp -o ./cpp/main && open ./cpp/main"
   },
   "dependencies": {
     "eslint": "^3.14.0"
