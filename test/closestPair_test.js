@@ -1,7 +1,7 @@
 import { expect } from 'chai'
 import closestPair from '../src/closestPair'
 
-describe.only('closestPair()', function(){
+describe('closestPair()', function(){
 
   it('should be a function', function(){
     expect(closestPair).to.be.a('function')
@@ -21,7 +21,6 @@ describe.only('closestPair()', function(){
       [0,-2]
     ]
     let result = closestPair(points)
-    console.log('RESULT', result)
-    expect(result).to.eql({point1: [-2, 0], point2: [-1, 0], distance: 1})
+    expect(result).to.eql({point1: [-1, 0], point2: [-2, 0], distance: 1})
   })
 })
