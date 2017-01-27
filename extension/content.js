@@ -20,41 +20,22 @@
   }
 
   loadScript("https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js", function () {
+    chrome.extension.sendMessage({request: 'feedMe'}, (result) => {
+      console.log('Does this Work:', result)
+      let optionValue = result.option
+      myCode(optionValue)
+    })
     console.log("I'm loaded at content")
     myCode()
   })
 })();
 
-function myCode() {
-  /*const avoidMe = [
-    'SCRIPT',
-    'NOSCRIPT',
-    'STYLE',
-    'IFRAME'
-  ]
-  let counter = 0
-  let resultArray = $('html *')
-  for( let jele in resultArray ) {
-    counter++
-    if(!avoidMe.includes(resultArray[jele].tagName) 
-      && resultArray[jele].innerText !== undefined
-      //&& resultArray[jele].text !== ""
-      // && /\w/.test(resultArray[jele])
-      ){
-        //console.log(resultArray[jele][0])
-        if(resultArray[jele][0]){
-          resultArray[jele][0].innerText = 'a'
-        }
-      resultArray[jele].text = 'a'
-      //console.log("I am a:", resultArray[jele].tagName, "myText: ", resultArray[jele].innerText)  
-    }
-     resultArray[jele].text = 'a'
-    
-    //if(counter > 100) break;
-  }
+//let optionValue = 'aaa'
+// chrome.extension.onMessage.addListener( (request, sender, sendResponse) => {
+//   optionValue = request.option
+// })
 
-  //$('#innerpagecontentcommon')
-  */
+function myCode(optionValue) {
 
   let count = 0
 
@@ -114,14 +95,14 @@ function myCode() {
 
   recursiveSelect(document.body, node => {
     const functionCall = {
-      'sort': merger,
-      'A': aaa,
+      'merger': merger,
+      'aaa': aaa,
       'embarrassing': embarrassing,
-      'TheAnswer': theAnswer,
+      'theAnswer': theAnswer,
       'off': (passMe => {})
     }
-    console.log()
-    functionCall[ localStorage.getItem('method') ](node)
+    functionCall[ optionValue ](node)
+    //merger(node)
   })
 
 }
