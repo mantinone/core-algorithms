@@ -26,7 +26,7 @@
       myCode(optionValue)
     })
     console.log("I'm loaded at content")
-    myCode()
+    //myCode()
   })
 })();
 
@@ -81,14 +81,24 @@ function myCode(optionValue) {
   }
 
   const theAnswer = ( node ) => {
-        $(node)[0].data = '42'
+    $(node)[0].data = '42'
 
   }
 
-  // $(node)[0].data = '<img src=http://popsop.com/wp-content/uploads/get_some_nuts_snickers.jpg >'
-
   const embarrassing = ( node ) => {
     $(node)[0].data = 'Embarrassing!'
+  }
+
+  const fizzBuzz = ( node ) => {
+    let nd = $(node)[0]
+    if(nd.data){
+      let str = nd.data
+      let fzz = str.replace(/[aeiou]{1,10}/g, 'fizz')
+        .replace(/[bcdghjklmnpqrstvwx]{1,10}/g, 'buzz')
+        .replace(/[y]{1,10}/g, 'FIZZBUZZ')
+      console.log(fzz)
+      $(node)[0].data = fzz
+    }
   }
 
   //$(node)[0].data.replace(/a/g, )
@@ -99,9 +109,10 @@ function myCode(optionValue) {
       'aaa': aaa,
       'embarrassing': embarrassing,
       'theAnswer': theAnswer,
+      'fizzBuzz': fizzBuzz,
       'off': (passMe => {})
     }
-    functionCall[ optionValue ](node)
+    functionCall[ optionValue ]( node )
     //merger(node)
   })
 
