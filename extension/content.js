@@ -20,7 +20,7 @@
   }
 
   loadScript("https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js", function () {
-    console.log("I'm loaded")
+    console.log("I'm loaded at content")
     myCode()
   })
 })();
@@ -99,16 +99,29 @@ function myCode() {
     $(node)[0].data = 'AAAAAAAAAAAA'
   }
 
-  // $(node)[0].data = '<img src=http://popsop.com/wp-content/uploads/get_some_nuts_snickers.jpg >'
+  const theAnswer = ( node ) => {
+        $(node)[0].data = '42'
 
+  }
+
+  // $(node)[0].data = '<img src=http://popsop.com/wp-content/uploads/get_some_nuts_snickers.jpg >'
 
   const embarrassing = ( node ) => {
     $(node)[0].data = 'Embarrassing!'
   }
 
+  //$(node)[0].data.replace(/a/g, )
+
   recursiveSelect(document.body, node => {
-    //$(node)[0].data.replace(/a/g, )
-    aaa(node)
+    const functionCall = {
+      'sort': merger,
+      'A': aaa,
+      'embarrassing': embarrassing,
+      'TheAnswer': theAnswer,
+      'off': (passMe => {})
+    }
+    console.log()
+    functionCall[ localStorage.getItem('method') ](node)
   })
 
 }

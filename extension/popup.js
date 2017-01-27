@@ -93,6 +93,7 @@ function renderStatus(statusText) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+  console.log("I'M LOADED AT DOMContentLoaded!")
   getCurrentTabUrl(function(url) {
     // Put the image URL in Google search.
     renderStatus('Performing Google Image search for ' + url);
@@ -115,4 +116,11 @@ document.addEventListener('DOMContentLoaded', function() {
       renderStatus('Cannot display image. ' + errorMessage);
     });
   });
+
+  let optionSelection = document.getElementById('options')
+  optionSelection.addEventListener('onChange', _ => {
+    localStorage.setItem('method', optionSelection.value)
+  })
+
 });
+
