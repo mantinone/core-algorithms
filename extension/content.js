@@ -25,34 +25,16 @@
       let optionValue = result.option
       myCode(optionValue)
     })
-    console.log("I'm loaded at content")
-    //myCode()
   })
 })();
 
-//let optionValue = 'aaa'
-// chrome.extension.onMessage.addListener( (request, sender, sendResponse) => {
-//   optionValue = request.option
-// })
-
 function myCode(optionValue) {
-
-  let count = 0
-
   const avoidMe = [
       'SCRIPT',
       'NOSCRIPT',
       'STYLE',
       'IFRAME'
     ]
-
-  const vowels = [
-    'a', 'A',
-    'e', 'E',
-    'i', 'I',
-    'o', 'O',
-    'u', 'U'
-  ]
 
   const recursiveSelect = (node, callback) => {
     //count++
@@ -101,8 +83,6 @@ function myCode(optionValue) {
     }
   }
 
-  //$(node)[0].data.replace(/a/g, )
-
   recursiveSelect(document.body, node => {
     const functionCall = {
       'merger': merger,
@@ -113,7 +93,5 @@ function myCode(optionValue) {
       'off': (passMe => {})
     }
     functionCall[ optionValue ]( node )
-    //merger(node)
   })
-
 }
