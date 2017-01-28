@@ -49,5 +49,12 @@ describe('makeChange()', function(){
       nickels: 0,
       pennies: 0,
     })
+
+  })
+  it('returns appropriate error messages', () => {
+    expect(makeChange({price: "WOOHOO", amountGiven: 170})).to.equal("Please enter a number.")
+
+    expect(makeChange({price: 100, amountGiven: 99})).to.equal('Not enough money given.')
+
   })
 })

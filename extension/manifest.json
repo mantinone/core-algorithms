@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "Text Enhancer",
+  "version": "0.4",
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["jquery.js", "content.js", "mergeSort.js"]
+    }
+  ],
+  "browser_action": {
+    "default_icon": "favicons.png",
+    "default_popup": "popup.html"
+  },
+   "background": {
+     "scripts": ["background.js"]
+   },
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/"
+  ]
+}
