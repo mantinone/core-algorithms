@@ -21,7 +21,6 @@
 
   loadScript("https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js", function () {
     chrome.extension.sendMessage({request: 'feedMe'}, (result) => {
-      console.log('Does this Work:', result)
       let optionValue = result.option
       myCode(optionValue)
     })
@@ -37,21 +36,17 @@ function myCode(optionValue) {
     ]
 
   const recursiveSelect = (node, callback) => {
-    //count++
-    if(count < 200){
-      console.log(    count    )
+
       if(!avoidMe.includes(node.tagName) && node.childNodes.length === 0) {
         callback(node)
       }
       node.childNodes.forEach( nodeElement => {
         recursiveSelect(nodeElement, callback)
       })
-    }
   }
 
   const merger = ( node ) => {
     let nd = $(node)[0]
-    console.log(nd.data)
     if( nd.data ){
       let split = nd.data.split("")
       nd.data = mergeSort(split).join("")
@@ -78,7 +73,6 @@ function myCode(optionValue) {
       let fzz = str.replace(/[aeiou]{1,10}/g, 'fizz')
         .replace(/[bcdghjklmnpqrstvwx]{1,10}/g, 'buzz')
         .replace(/[y]{1,10}/g, 'FIZZBUZZ')
-      console.log(fzz)
       $(node)[0].data = fzz
     }
   }
