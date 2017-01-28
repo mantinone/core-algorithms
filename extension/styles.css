@@ -1,0 +1,12 @@
+body {
+  width: 150px;
+  height: 250px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li, li * {
+  margin: 2px;
+}
