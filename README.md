@@ -242,18 +242,18 @@ _List of specifications (specs) for the completed goal. These are declarative se
 
 **This is a core goal. The specifications are non-negotiable. To complete this goal, you must complete all specs listed below.**
 
-- [ ] Artifact produced is a fork of the [core-algorithms][core-algorithms] repo.
-- [ ] Can run all tests with `npm test`.
-- [ ] All tests are passing.
-- [ ] For each algorithm identified above, there exists:
-  - [ ] a test file with at least 2 unit tests using valid inputs, and at least 1 unit test using invalid inputs.
-  - [ ] an implementation file with a correct implementation of the algorithm.
+- [x] Artifact produced is a fork of the [core-algorithms][core-algorithms] repo.
+- [x] Can run all tests with `npm test`.
+- [x] All tests are passing.
+- [x] For each algorithm identified above, there exists:
+  - [x] a test file with at least 2 unit tests using valid inputs, and at least 1 unit test using invalid inputs.
+  - [x] an implementation file with a correct implementation of the algorithm.
 
 ### Required
 
 _Do not remove these specs - they are required for all goals_.
 
-- [ ] The artifact produced is properly licensed, preferably with the [MIT license][mit-license].
+- [x] The artifact produced is properly licensed, preferably with the [MIT license][mit-license].
 
 ### Stretch
 
